@@ -80,8 +80,11 @@ select.addEventListener("change", (e) => {
     calc.style = "display: none";
     return;
   }
+
   selectedHide = value;
   calc.style = "display: flex";
+
+  document.getElementById("hideImage").title = e.target.value;
 
   init();
   calculate();
