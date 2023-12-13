@@ -3,129 +3,322 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Leather Working Calculator</title>
+    <link rel="icon" href="./assets/img/Gamelogo-vintagestory.ico">
+    <title>Leather working calculator</title>
 </head>
 
 <body>
-    <h1>Leather Working Calculator</h1>
+    <h1>Leather working calculator</h1>
+    <div class="container">
+        <select name="select" id="selectHide"></select>
 
-    <section id="calculator">
-        <h2>Calcualtor</h2>
-    </section>
-    <br>
-    <section>
-        <p>
-            <img src="assets/img/Hide-raw.png" alt="Hide-raw"> ->
-            <img src="assets/img/Hide_soaked.png" alt=""> ->
-            <img src="assets/img/Hide_scraped.png" alt=""> ->
-            <img src="assets/img/Prepared_hide.png" alt=""> ->
-            <img src="assets/img/Leather.png" alt="">
-        </p>
-    </section>
-    <br>
-    <section>
-        <p>1 roca caliza = 1 cal en polvo</p>
-        <p>1 borax = 2 borax diluido</p>
-    </section>
-    <br>
-    <section>
-        <h2>Tanino débil</h2>
-        <p>1 tronco de roble + 10L de agua = 10L tanino débil</p>
-        <p>1 tronco de acacia + 10L de agua = 10L tanino débil</p>
-    </section>
-    <br>
-    <section>
-        <h2>Tanino fuerte</h2>
-        <p>1 tronco de roble + 10L de tanino débil = 10L tanino fuerte</p>
-        <p>1 tronco de acacia + 10L de tanino débil = 10L tanino fuerte</p>
-    </section>
-    <br>
-    <section>
-        <h2>Piel remojada</h2>
-        <div>
-            <h3>Pequeña</h3>
-            <p>2L borax diluido + 1 piel cruda pequeña = 1 piel remojada pequeña</p>
-            <p>2L agua de cal + 1 piel cruda pequeña = 1 piel remojada pequeña</p>
-        </div>
-        <div>
-            <h3>Mediana</h3>
-            <p>4L borax diluido + 1 piel cruda mediana = 1 piel remojada mediana</p>
-            <p>4L agua de cal + 1 piel cruda mediana = 1 piel remojada mediana</p>
-        </div>
-        <div>
-            <h3>Grande</h3>
-            <p>6L borax diluido + 1 piel cruda grande = 1 piel remojada grande</p>
-            <p>6L agua de cal + 1 piel cruda grande = 1 piel remojada grande</p>
-        </div>
-        <div>
-            <h3>Enorme</h3>
-            <p>10L borax diluido + 1 piel cruda enorme = 1 piel remojada enorme</p>
-            <p>10L agua de cal + 1 piel cruda enorme = 1 piel remojada enorme</p>
-        </div>
-        <p>20h</p>
-    </section>
-    <br>
-    <section>
-        <h2>Piel preparada</h2>
-        <div>
-            <h3>Pequeña</h3>
-            <p>2L tanino débil + 1 piel raspada pequeña = 1 piel preparada pequeña</p>
-        </div>
-        <div>
-            <h3>Mediana</h3>
-            <p>4L tanino débil + 1 piel raspada mediana = 1 piel preparada mediana</p>
-        </div>
-        <div>
-            <h3>Grande</h3>
-            <p>6L tanino débil + 1 piel raspada grande = 1 piel preparada grande</p>
-        </div>
-        <div>
-            <h3>Enorme</h3>
-            <p>10L tanino débil + 1 piel raspada enorme = 1 piel preparada enorme</p>
-        </div>
-        <p>3 dias</p>
-    </section>
-    <br>
-    <section>
-        <h2>Cuero</h2>
-        <div>
-            <h3>Pequeña</h3>
-            <p>2L tanino fuerte + 1 piel preparada pequeña = 1 cuero</p>
-        </div>
-        <div>
-            <h3>Mediana</h3>
-            <p>4L tanino fuerte + 1 piel preparada mediana = 2 cuero</p>
-        </div>
-        <div>
-            <h3>Grande</h3>
-            <p>6L tanino fuerte + 1 piel preparada grande = 3 cuero</p>
-        </div>
-        <div>
-            <h3>Enorme</h3>
-            <p>10L tanino fuerte + 1 piel preparada enorme = 5 cuero</p>
-        </div>
-        <p>4,5 dias</p>
-    </section>
-    <br>
+        <div class="calc">
+            <div class="selectors">
+                <!-- HIDE -->
+                <img src="./assets/img/Hide-raw.png" alt="Leather-plain" srcset="">
+                <p>Hides <span class="cantSelectedHideSpan">x</span></p>
 
-    <p><img src="assets/img/Hide-raw.png" alt="">Hide raw</p>
-    <p><img src="assets/img/Hide_scraped.png" alt="">Hide scraped</p>
-    <p><img src="assets/img/Hide_soaked.png" alt="">Hide soacked</p>
-    <p><img src="assets/img/Prepared_hide.png" alt="">Prepared hide</p>
-    <p><img src="assets/img/Leather.png" alt="">Leather</p>
-    <p><img src="assets/img/Strong_tannin.png" alt="">Strong tannin</p>
-    <p><img src="assets/img/Weak_tannin.png" alt="">Weak tannin</p>
-    <p><img src="assets/img/Water-blob.png" alt="">Water blob</p>
-    <p><img src="assets/img/Limewater.png" alt="">Limewater</p>
-    <p><img src="assets/img/Diluited_Borax.png" alt="">Diluited borax</p>
-    <p><img src="assets/img/Lime.png" alt="">Lime</p>
-    <p><img src="assets/img/Powdered_borax.png" alt="">Powdered borax</p>
-    <p><img src="assets/img/Log-acacia.png" alt="">Acacia</p>
-    <p><img src="assets/img/Log-oak.png" alt="">Oak</p>
+                <div id="hide_range">
+                    <span>1</span>
+                    <input id="inputRangeHide" type="range" min="1" max="10" value="1" style="width: 200px;">
+                    <span id="maxHideSpan">x</span>
+                </div>
 
+                <!-- LEATHER -->
+                <img src="./assets/img/Leather.png" alt="Leather-plain" srcset="">
+                <p>Leathers <span class="cantSelectedLeatherSpan">x</span></p>
+
+                <div id="leather_range">
+                    <span id="minLeatherSpan">1</span>
+                    <input id="inputRangeLeather" type="range" min="1" max="10" value="1" style="width: 200px;">
+                    <span id="maxLeatherSpan">x</span>
+                </div>
+
+            </div>
+            <div class="materials">
+                <h3>Shopping List</h3>
+                <div class="item-containers">
+                    <!-- Hides -->
+                    <div class="item">
+                        <p>Hide</p>
+                        <img style="width: 60px; height: 60px;" src="./assets/img/Hide-raw.png" alt="">
+                        <span class="cantSelectedHideSpan">x</span>
+                    </div>
+                    <!-- Log -->
+                    <div class="item">
+                        <p>Oak or acacia logs</p>
+                        <div>
+                            <img src="./assets/img/Log-oak.png" alt="">
+                            <img src="./assets/img/Log-acacia.png" alt="">
+                        </div>
+                        <span class="cantTotalLogsSpan">x</span>
+                    </div>
+                    <!-- Water -->
+                    <div class="item">
+                        <p>Water</p>
+                        <img src="./assets/img/Water-blob.png" alt="">
+                        <span class="cantTotalLiquidSpan">x</span>
+                    </div>
+                    <!-- Solvent -->
+                    <div class="item">
+                        <p>Lime or Powdered borax</p>
+                        <div>
+                            <img src="./assets/img/Lime.png" alt="">
+                            <img src="./assets/img/Powdered_borax.png" alt="">
+                        </div>
+                        <span class="cantSolventSpan">x</span>
+                    </div>
+                    <!-- Solvent -->
+                    <div class="item">
+                        <p>Diluited Borax or Limewater</p>
+                        <div>
+                            <img src="./assets/img/Limewater.png" alt="">
+                            <img src="./assets/img/Diluited_Borax.png" alt="">
+                        </div>
+                        <span class="cantSolventResultSpan">x</span>
+                    </div>
+                    <!-- Weak tanin -->
+                    <div class="item">
+                        <p>Weak tanin</p>
+                        <img src="./assets/img/Weak_tannin.png" alt="">
+                        <span class="cantLiquidSpan">x</span>
+                    </div>
+                    <!-- Strong tanin -->
+                    <div class="item">
+                        <p>Strong tanin</p>
+                        <img src="./assets/img/Strong_tannin.png" alt="">
+                        <span class="cantLiquidSpan">x</span>
+                    </div>
+                </div>
+            </div>
+            <div class="process-list">
+
+                <!-- Diluited Borax or Limewater -->
+                <div class="tableContainer">
+                    <h4>Diluited Borax or Limewater</h4>
+                    <table>
+                        <tr>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt=""></td>
+                            <td rowspan="2">+</td>
+                            <td>
+                                <img src="./assets/img/Water-blob.png" alt="">
+                            </td>
+                            <td rowspan="2">+</td>
+                            <td class="optional">
+                                <img src="./assets/img/Lime.png" alt="">
+                                <img src="./assets/img/Powdered_borax.png" alt="">
+                            </td>
+                            <td rowspan="2">=</td>
+                            <td class="optional">
+                                <img src="./assets/img/Limewater.png" alt="">
+                                <img src="./assets/img/Diluited_Borax.png" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span id="cantWaterToSolventSpan">x</span>L</td>
+                            <td><span class="cantSolventSpan">x</span></td>
+                            <td><span class="cantSolventResultSpan">x</span>L</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- SOAKED -->
+                <div class="tableContainer">
+                    <h4>Soaked Hide</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">
+                                    <img src="./assets/img/Barrel.png" alt="">
+                                </td>
+                                <td rowspan="2"> + </td>
+                                <td class="optional">
+                                    <img src="./assets/img/Limewater.png" alt="">
+                                    <img src="./assets/img/Diluited_Borax.png" alt="">
+                                </td>
+                                <td rowspan="2"> + </td>
+                                <td>
+                                    <img src="./assets/img/Hide-raw.png" alt="">
+                                </td>
+                                <td rowspan="2"> = </td>
+                                <td>
+                                    <img src="./assets/img/Hide_soaked.png" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantSolventResultSpan">x</span>L</td>
+                                <td><span class="cantSelectedHideSpan">x</span></td>
+                                <td><span class="cantSelectedHideSpan">x</span></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <!-- SCRAPED -->
+                <div class="tableContainer">
+                    <h4>Scraped Hide</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><img src="./assets/img/Hide_soaked.png" alt=""></td>
+                                <td rowspan="2"> + </td>
+                                <td><img src="./assets/img/Knife-flint.png" alt=""></td>
+                                <td rowspan="2"> = </td>
+                                <td><img src="./assets/img/Hide_scraped.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantSelectedHideSpan">1</span></td>
+                                <td>1</td>
+                                <td><span class="cantSelectedHideSpan">1</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- WEAK TANIN -->
+                <div class="tableContainer">
+                    <h4>Weak Tanin</h4>
+                    <table>
+                        <tr>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt=""></td>
+                            <td rowspan="2">+</td>
+                            <td>
+                                <img src="./assets/img/Water-blob.png" alt="">
+                            </td>
+                            <td rowspan="2">+</td>
+                            <td class="optional">
+                                <img src="./assets/img/Log-oak.png" alt="">
+                                <img src="./assets/img/Log-acacia.png" alt="">
+                            </td>
+                            <td rowspan="2">=</td>
+                            <td>
+                                <img src="./assets/img/Weak_tannin.png" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="cantLiquidSpan">x</span>L</td>
+                            <td><span class="cantLogsSpan">x</span></td>
+                            <td><span class="cantLiquidSpan">x</span>L</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- PREPARED HIDE -->
+                <div class="tableContainer">
+                    <h4>Prepared Hide</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">
+                                    <img src="./assets/img/Barrel.png" alt="">
+                                </td>
+                                <td rowspan="2"> + </td>
+                                <td>
+                                    <img src="./assets/img/Weak_tannin.png" alt="">
+                                </td>
+                                <td rowspan="2"> + </td>
+                                <td>
+                                    <img src="./assets/img/Hide_scraped.png" alt="">
+                                </td>
+                                <td rowspan="2"> = </td>
+                                <td>
+                                    <img src="./assets/img/Prepared_hide.png" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                                <td><span class="cantSelectedHideSpan">x</span></td>
+                                <td><span class="cantSelectedHideSpan">x</span></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <!-- STRONG TANIN -->
+                <div class="tableContainer">
+                    <h4>Strong Tanin</h4>
+                    <table>
+                        <tr>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt=""></td>
+                            <td rowspan="2">+</td>
+                            <td>
+                                <img src="./assets/img/Water-blob.png" alt="">
+                            </td>
+                            <td rowspan="2">+</td>
+                            <td class="optional">
+                                <img src="./assets/img/Log-oak.png" alt="">
+                                <img src="./assets/img/Log-acacia.png" alt="">
+                            </td>
+                            <td rowspan="2">=</td>
+                            <td>
+                                <img src="./assets/img/Weak_tannin.png" alt="">
+                            </td>
+                            <td rowspan="2">+</td>
+                            <td class="optional">
+                                <img src="./assets/img/Log-oak.png" alt="">
+                                <img src="./assets/img/Log-acacia.png" alt="">
+                            </td>
+                            <td rowspan="2">=</td>
+                            <td>
+                                <img src="./assets/img/Strong_tannin.png" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="cantLiquidSpan">x</span>L</td>
+                            <td><span class="cantLogsSpan">x</span></td>
+                            <td><span class="cantLiquidSpan">x</span>L</td>
+                            <td><span class="cantLogsSpan">x</span></td>
+                            <td><span class="cantLiquidSpan">x</span>L</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- LEATHER -->
+                <div class="tableContainer">
+                    <h4>Leather</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">
+                                    <img src="./assets/img/Barrel.png" alt="">
+                                </td>
+                                <td rowspan="2"> + </td>
+                                <td>
+                                    <img src="./assets/img/Strong_tannin.png" alt="">
+                                </td>
+                                <td rowspan="2"> + </td>
+                                <td>
+                                    <img src="./assets/img/Prepared_hide.png" alt="">
+                                </td>
+                                <td rowspan="2"> = </td>
+                                <td>
+                                    <img src="./assets/img/Leather.png" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                                <td><span class="cantSelectedHideSpan">x</span></td>
+                                <td><span class="cantSelectedLeatherSpan">x</span></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="social_medias">
+            <a href="https://github.com/Elias288">
+                <img src="./assets/svg/github-142-svgrepo-com.svg" alt="github">
+            </a>
+            <a href="https://discord.com/users/477665668800708619">
+                <img src="./assets/svg/discord-svgrepo-com.svg" alt="discord">
+            </a>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
