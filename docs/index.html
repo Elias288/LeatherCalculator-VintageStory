@@ -10,28 +10,32 @@
 </head>
 
 <body>
-    <h1>Leather working calculator</h1>
+    <div class="page-title">
+        <h1>Leather working calculator</h1>
+    </div>
+
+    <div class="social_medias">
+        <a href="https://github.com/Elias288" title="Github">
+            <img src="./assets/svg/github-142-svgrepo-com.svg" alt="github">
+        </a>
+
+        <a href="https://discord.com/users/477665668800708619" title="Discord">
+            <img src="./assets/svg/discord-svgrepo-com.svg" alt="discord">
+        </a>
+
+        <a href="https://github.com/Elias288/LeatherCalculator-VintageStory/blob/master/README.md" title="Data table">
+            <img src="./assets/svg/table-list-svgrepo-com.svg" alt="">
+        </a>
+
+        <a href="https://elias288-github-io.translate.goog/Tutorial-traducir-mods-VintageStory/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=wapp"
+            target="_blank" title="Tutorial how to translate game mods">
+            <img src="./assets/svg/translate-svgrepo-com.svg" alt="">
+        </a>
+    </div>
     <div class="container">
-        <select name="select" id="selectHide"></select>
+        <div class="selector_container">
 
-        <div class="social_medias">
-            <a href="https://github.com/Elias288" title="Github">
-                <img src="./assets/svg/github-142-svgrepo-com.svg" alt="github">
-            </a>
-
-            <a href="https://discord.com/users/477665668800708619" title="Discord">
-                <img src="./assets/svg/discord-svgrepo-com.svg" alt="discord">
-            </a>
-
-            <a href="https://github.com/Elias288/LeatherCalculator-VintageStory/blob/master/README.md"
-                title="Data table">
-                <img src="./assets/svg/table-list-svgrepo-com.svg" alt="">
-            </a>
-
-            <a href="https://elias288-github-io.translate.goog/Tutorial-traducir-mods-VintageStory/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=wapp"
-                target="_blank" title="Tutorial how to translate game mods">
-                <img src="./assets/svg/translate-svgrepo-com.svg" alt="">
-            </a>
+            <select name="select" id="selectHide"></select>
         </div>
 
         <div class="calc">
@@ -57,7 +61,7 @@
                 </div>
 
             </div>
-            <div class="materials">
+            <div class="shopping_list">
                 <h3>Shopping List</h3>
                 <div class="item-containers">
                     <!-- Hides -->
@@ -82,7 +86,7 @@
                             <img src="./assets/img/Lime.png" alt="" title="Lime">
                             <img src="./assets/img/Powdered_borax.png" alt="" title="Powered Borax">
                         </div>
-                        <div style="display: flex; justify-content: space-between; width: 50%;">
+                        <div class="shopping_optional_cant_items">
                             <span class="cantLimeSpan">x</span>
                             <span class="cantPoweredBoraxSpan">x</span>
                         </div>
@@ -94,7 +98,7 @@
                             <img src="./assets/img/Limewater.png" alt="" title="Limewater">
                             <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
                         </div>
-                        <div style="display: flex; justify-content: space-between; width: 50%;">
+                        <div class="shopping_optional_cant_items">
                             <p><span class="cantLimeSpan">x</span>L</p>
                             <p><span class="cantBoraxSpan">x</span>L</p>
                         </div>
@@ -113,236 +117,251 @@
                     </div>
                 </div>
             </div>
+
             <div class="process-list">
                 <!-- Diluited Borax or Limewater -->
                 <div class="tableContainer">
                     <h4>Diluited Borax or Limewater</h4>
-                    <table>
-                        <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
-                            <td rowspan="2">+</td>
-                            <td><img src="./assets/img/Water-blob.png" alt=""></td>
-                            <td rowspan="2">+</td>
-                            <td><img src="./assets/img/Lime.png" alt="" title="Lime"></td>
-                            <td rowspan="2">=</td>
-                            <td><img src="./assets/img/Limewater.png" alt="" title="Limewater"></td>
-                        </tr>
-                        <tr>
-                            <td><span class="cantLimeSpan">x</span>L</td>
-                            <td><span class="cantLimeSpan">x</span></td>
-                            <td><span class="cantLimeSpan">x</span>L</td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
-                            <td rowspan="2">+</td>
-                            <td>
-                                <img src="./assets/img/Water-blob.png" alt="">
-                            </td>
-                            <td rowspan="2">+</td>
-                            <td>
-                                <img src="./assets/img/Powdered_borax.png" alt="" title="Powered Borax">
-                            </td>
-                            <td rowspan="2">=</td>
-                            <td class="">
-                                <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span class="cantBoraxSpan">x</span>L</td>
-                            <td><span class="cantPoweredBoraxSpan">x</span></td>
-                            <td><span class="cantBoraxSpan">x</span>L</td>
-                        </tr>
-                    </table>
+                    <div>
+                        <table>
+                            <tr>
+                                <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
+                                <td rowspan="2">+</td>
+                                <td><img src="./assets/img/Water-blob.png" alt=""></td>
+                                <td rowspan="2">+</td>
+                                <td><img src="./assets/img/Lime.png" alt="" title="Lime"></td>
+                                <td rowspan="2">=</td>
+                                <td><img src="./assets/img/Limewater.png" alt="" title="Limewater"></td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantLimeSpan">x</span>L</td>
+                                <td><span class="cantLimeSpan">x</span></td>
+                                <td><span class="cantLimeSpan">x</span>L</td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
+                                <td rowspan="2">+</td>
+                                <td>
+                                    <img src="./assets/img/Water-blob.png" alt="">
+                                </td>
+                                <td rowspan="2">+</td>
+                                <td>
+                                    <img src="./assets/img/Powdered_borax.png" alt="" title="Powered Borax">
+                                </td>
+                                <td rowspan="2">=</td>
+                                <td class="">
+                                    <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantBoraxSpan">x</span>L</td>
+                                <td><span class="cantPoweredBoraxSpan">x</span></td>
+                                <td><span class="cantBoraxSpan">x</span>L</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- SOAKED -->
                 <div class="tableContainer">
                     <h4>Soaked Hide</h4>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">
-                                    <img src="./assets/img/Barrel.png" alt="" title="Barrel">
-                                </td>
-                                <td rowspan="2"> + </td>
-                                <td class="">
-                                    <img src="./assets/img/Limewater.png" alt="" title="Limewater">
-                                </td>
-                                <td>
-                                    <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
-                                </td>
-                                <td rowspan="2"> + </td>
-                                <td>
-                                    <img src="./assets/img/Hide-raw.png" alt="" title="Hide Raw">
-                                </td>
-                                <td rowspan="2"> = </td>
-                                <td>
-                                    <img src="./assets/img/Hide_soaked.png" alt="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="cantLimeSpan">x</span>L</td>
-                                <td><span class="cantBoraxSpan">x</span>L</td>
-                                <td><span class="cantSelectedHideSpan">x</span></td>
-                                <td><span class="cantSelectedHideSpan">x</span></td>
-                            </tr>
-                        </tbody>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        <img src="./assets/img/Barrel.png" alt="" title="Barrel">
+                                    </td>
+                                    <td rowspan="2"> + </td>
+                                    <td class="">
+                                        <img src="./assets/img/Limewater.png" alt="" title="Limewater">
+                                    </td>
+                                    <td>
+                                        <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
+                                    </td>
+                                    <td rowspan="2"> + </td>
+                                    <td>
+                                        <img src="./assets/img/Hide-raw.png" alt="" title="Hide Raw">
+                                    </td>
+                                    <td rowspan="2"> = </td>
+                                    <td>
+                                        <img src="./assets/img/Hide_soaked.png" alt="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="cantLimeSpan">x</span>L</td>
+                                    <td><span class="cantBoraxSpan">x</span>L</td>
+                                    <td><span class="cantSelectedHideSpan">x</span></td>
+                                    <td><span class="cantSelectedHideSpan">x</span></td>
+                                </tr>
+                            </tbody>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- SCRAPED -->
                 <div class="tableContainer">
                     <h4>Scraped Hide</h4>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><img src="./assets/img/Hide_soaked.png" alt=""></td>
-                                <td rowspan="2"> + </td>
-                                <td><img src="./assets/img/Knife-flint.png" alt=""></td>
-                                <td rowspan="2"> = </td>
-                                <td><img src="./assets/img/Hide_scraped.png" alt=""></td>
-                            </tr>
-                            <tr>
-                                <td><span class="cantSelectedHideSpan">1</span></td>
-                                <td>1</td>
-                                <td><span class="cantSelectedHideSpan">1</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><img src="./assets/img/Hide_soaked.png" alt=""></td>
+                                    <td rowspan="2"> + </td>
+                                    <td><img src="./assets/img/Knife-flint.png" alt=""></td>
+                                    <td rowspan="2"> = </td>
+                                    <td><img src="./assets/img/Hide_scraped.png" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="cantSelectedHideSpan">1</span></td>
+                                    <td>1</td>
+                                    <td><span class="cantSelectedHideSpan">1</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- WEAK TANIN -->
                 <div class="tableContainer">
                     <h4>Weak Tanin</h4>
-                    <table>
-                        <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
-                            <td rowspan="2">+</td>
-                            <td>
-                                <img src="./assets/img/Water-blob.png" alt="">
-                            </td>
-                            <td rowspan="2">+</td>
-                            <td class="optional">
-                                <img src="./assets/img/Log-oak.png" alt="">
-                                <img src="./assets/img/Log-acacia.png" alt="">
-                            </td>
-                            <td rowspan="2">=</td>
-                            <td>
-                                <img src="./assets/img/Weak_tannin.png" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span class="cantLiquidSpan">x</span>L</td>
-                            <td><span class="cantLogsSpan">x</span></td>
-                            <td><span class="cantLiquidSpan">x</span>L</td>
-                        </tr>
-                    </table>
+                    <div>
+                        <table>
+                            <tr>
+                                <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
+                                <td rowspan="2">+</td>
+                                <td>
+                                    <img src="./assets/img/Water-blob.png" alt="">
+                                </td>
+                                <td rowspan="2">+</td>
+                                <td class="optional">
+                                    <img src="./assets/img/Log-oak.png" alt="">
+                                    <img src="./assets/img/Log-acacia.png" alt="">
+                                </td>
+                                <td rowspan="2">=</td>
+                                <td>
+                                    <img src="./assets/img/Weak_tannin.png" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                                <td><span class="cantLogsSpan">x</span></td>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- PREPARED HIDE -->
                 <div class="tableContainer">
                     <h4>Prepared Hide</h4>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">
-                                    <img src="./assets/img/Barrel.png" alt="" title="Barrel">
-                                </td>
-                                <td rowspan="2"> + </td>
-                                <td>
-                                    <img src="./assets/img/Weak_tannin.png" alt="">
-                                </td>
-                                <td rowspan="2"> + </td>
-                                <td>
-                                    <img src="./assets/img/Hide_scraped.png" alt="">
-                                </td>
-                                <td rowspan="2"> = </td>
-                                <td>
-                                    <img src="./assets/img/Prepared_hide.png" alt="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="cantLiquidSpan">x</span>L</td>
-                                <td><span class="cantSelectedHideSpan">x</span></td>
-                                <td><span class="cantSelectedHideSpan">x</span></td>
-                            </tr>
-                        </tbody>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        <img src="./assets/img/Barrel.png" alt="" title="Barrel">
+                                    </td>
+                                    <td rowspan="2"> + </td>
+                                    <td>
+                                        <img src="./assets/img/Weak_tannin.png" alt="">
+                                    </td>
+                                    <td rowspan="2"> + </td>
+                                    <td>
+                                        <img src="./assets/img/Hide_scraped.png" alt="">
+                                    </td>
+                                    <td rowspan="2"> = </td>
+                                    <td>
+                                        <img src="./assets/img/Prepared_hide.png" alt="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="cantLiquidSpan">x</span>L</td>
+                                    <td><span class="cantSelectedHideSpan">x</span></td>
+                                    <td><span class="cantSelectedHideSpan">x</span></td>
+                                </tr>
+                            </tbody>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- STRONG TANIN -->
                 <div class="tableContainer">
                     <h4>Strong Tanin</h4>
-                    <table>
-                        <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
-                            <td rowspan="2">+</td>
-                            <td>
-                                <img src="./assets/img/Water-blob.png" alt="">
-                            </td>
-                            <td rowspan="2">+</td>
-                            <td class="optional">
-                                <img src="./assets/img/Log-oak.png" alt="">
-                                <img src="./assets/img/Log-acacia.png" alt="">
-                            </td>
-                            <td rowspan="2">=</td>
-                            <td>
-                                <img src="./assets/img/Weak_tannin.png" alt="">
-                            </td>
-                            <td rowspan="2">+</td>
-                            <td class="optional">
-                                <img src="./assets/img/Log-oak.png" alt="">
-                                <img src="./assets/img/Log-acacia.png" alt="">
-                            </td>
-                            <td rowspan="2">=</td>
-                            <td>
-                                <img src="./assets/img/Strong_tannin.png" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><span class="cantLiquidSpan">x</span>L</td>
-                            <td><span class="cantLogsSpan">x</span></td>
-                            <td><span class="cantLiquidSpan">x</span>L</td>
-                            <td><span class="cantLogsSpan">x</span></td>
-                            <td><span class="cantLiquidSpan">x</span>L</td>
-                        </tr>
-                    </table>
+                    <div>
+                        <table>
+                            <tr>
+                                <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
+                                <td rowspan="2">+</td>
+                                <td>
+                                    <img src="./assets/img/Water-blob.png" alt="">
+                                </td>
+                                <td rowspan="2">+</td>
+                                <td class="optional">
+                                    <img src="./assets/img/Log-oak.png" alt="">
+                                    <img src="./assets/img/Log-acacia.png" alt="">
+                                </td>
+                                <td rowspan="2">=</td>
+                                <td>
+                                    <img src="./assets/img/Weak_tannin.png" alt="">
+                                </td>
+                                <td rowspan="2">+</td>
+                                <td class="optional">
+                                    <img src="./assets/img/Log-oak.png" alt="">
+                                    <img src="./assets/img/Log-acacia.png" alt="">
+                                </td>
+                                <td rowspan="2">=</td>
+                                <td>
+                                    <img src="./assets/img/Strong_tannin.png" alt="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                                <td><span class="cantLogsSpan">x</span></td>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                                <td><span class="cantLogsSpan">x</span></td>
+                                <td><span class="cantLiquidSpan">x</span>L</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- LEATHER -->
                 <div class="tableContainer">
                     <h4>Leather</h4>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">
-                                    <img src="./assets/img/Barrel.png" alt="" title="Barrel">
-                                </td>
-                                <td rowspan="2"> + </td>
-                                <td>
-                                    <img src="./assets/img/Strong_tannin.png" alt="">
-                                </td>
-                                <td rowspan="2"> + </td>
-                                <td>
-                                    <img src="./assets/img/Prepared_hide.png" alt="">
-                                </td>
-                                <td rowspan="2"> = </td>
-                                <td>
-                                    <img src="./assets/img/Leather.png" alt="" title="Leather">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="cantLiquidSpan">x</span>L</td>
-                                <td><span class="cantSelectedHideSpan">x</span></td>
-                                <td><span class="cantSelectedLeatherSpan">x</span></td>
-                            </tr>
-                        </tbody>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        <img src="./assets/img/Barrel.png" alt="" title="Barrel">
+                                    </td>
+                                    <td rowspan="2"> + </td>
+                                    <td>
+                                        <img src="./assets/img/Strong_tannin.png" alt="">
+                                    </td>
+                                    <td rowspan="2"> + </td>
+                                    <td>
+                                        <img src="./assets/img/Prepared_hide.png" alt="">
+                                    </td>
+                                    <td rowspan="2"> = </td>
+                                    <td>
+                                        <img src="./assets/img/Leather.png" alt="" title="Leather">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="cantLiquidSpan">x</span>L</td>
+                                    <td><span class="cantSelectedHideSpan">x</span></td>
+                                    <td><span class="cantSelectedLeatherSpan">x</span></td>
+                                </tr>
+                            </tbody>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

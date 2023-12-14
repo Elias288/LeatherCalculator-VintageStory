@@ -1,37 +1,79 @@
 * {
   padding: 0;
   margin: 0;
+  --max-width: 800px;
+  --header-movile-height: 10vw;
+  --header-pc-height: 50px;
+
+  --shopping-img-size: 80px;
+  --shopping-background-color: #f9e219;
+  --shopping-border-color: #bfb131;
+
+  --process-list-img-size: 85px;
+
+  --optional-img-size: 80px;
+
+  --social-media-width: 60px;
+  --social-media-logo-size: 7vw;
+  --social-media-pc-logo-size: 40px;
 }
 
-h1 {
-  height: 50px;
+.page-title {
+  height: var(--header-movile-height);
   padding: 5px;
   box-sizing: border-box;
 }
 
+.page-title h1 {
+  font-size: 5vw;
+}
+
 img {
-  width: 100px;
-  height: 100px;
+  width: var(--process-list-img-size);
+  height: var(--process-list-img-size);
+}
+
+.social_medias {
+  float: left;
+  width: var(--social-media-width);
+  padding: 0 10px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social_medias a img {
+  width: var(--social-media-logo-size);
+  height: var(--social-media-logo-size);
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: calc(100vh - 50px);
+  height: calc(100vh - var(--header-movile-height));
   overflow: overlay;
+  padding-right: 20px;
+  box-sizing: border-box;
 }
 
-.process-listelectorContainer {
+.selector_container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+}
+
+#selectHide {
+  width: 150px;
 }
 
 .calc {
   margin-top: 1rem;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10rem;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .selectors {
@@ -42,52 +84,67 @@ img {
   margin-bottom: 2rem;
 }
 
-.materials {
-  background-color: #f9e219;
+.shopping_list {
+  background-color: var(--shopping-background-color);
   border-radius: 10px;
   padding: 10px;
-  display: block;
-  border: 5px solid #bfb131;
+  border: 5px solid var(--shopping-border-color);
   margin-bottom: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.materials img {
-  width: 80px;
-  height: 80px;
+.shopping_list img {
+  width: var(--shopping-img-size);
+  height: var(--shopping-img-size);
 }
 
-.materials h3 {
+.shopping_list h3 {
   padding: 0;
   margin: 0;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 2px solid #bfb131;
+  border-bottom: 2px solid var(--shopping-border-color);
 }
 
-.materials .item-containers {
+.shopping_list .item-containers {
   margin-top: 10px;
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 10px;
-  grid-template-columns: auto auto auto;
 }
 
-.materials .item {
+.shopping_list .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #bfb131;
+  border: 1px solid var(--shopping-border-color);
   border-radius: 8px;
-  justify-content: space-around;
   padding: 3px;
 }
 
-.materials .item p {
+.shopping_list .item .shopping_optional_cant_items {
+  display: flex;
+  justify-content: space-around;
+  width: calc(5px + var(--shopping-img-size) + var(--shopping-img-size));
+}
+
+.shopping_list .item p {
   padding: 0;
   margin: 0;
 }
 
-.tableContainer {
+.process-list .tableContainer {
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.process-list {
+  width: 100%;
+}
+
+.process-list .tableContainer > div {
+  overflow-x: auto;
 }
 
 .process-list table {
@@ -110,19 +167,27 @@ img {
 }
 
 .optional img {
-  width: 90px;
-  height: 90px;
+  width: var(--optional-img-size);
+  height: var(--optional-img-size);
 }
 
-.social_medias {
-  position: absolute;
-  top: 5rem;
-  left: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.social_medias a img {
-  width: 40px;
-  height: 40px;
+/* PC */
+@media screen and (min-width: 800px) {
+  .page-title {
+    height: var(--header-pc-height);
+  }
+  .page-title h1 {
+    font-size: xx-large;
+  }
+  .social_medias {
+    top: var(--header-pc-height);
+  }
+  .social_medias a img {
+    width: var(--social-media-pc-logo-size);
+    height: var(--social-media-pc-logo-size);
+  }
+  .container {
+    align-items: center;
+    height: calc(100vh - var(--header-pc-height));
+  }
 }
