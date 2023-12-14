@@ -46,9 +46,9 @@ img {
   background-color: #f9e219;
   border-radius: 10px;
   padding: 10px;
-  height: 100%;
   display: block;
   border: 5px solid #bfb131;
+  margin-bottom: 2rem;
 }
 
 .materials img {
@@ -66,13 +66,12 @@ img {
 
 .materials .item-containers {
   margin-top: 10px;
-  /* display: flex; */
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
 }
 
 .materials .item {
-  margin-right: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

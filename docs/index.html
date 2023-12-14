@@ -37,7 +37,7 @@
         <div class="calc">
             <div class="selectors">
                 <!-- HIDE -->
-                <img src="./assets/img/Hide-raw.png" alt="Leather-plain" id="hideImage">
+                <img src="./assets/img/Hide-raw.png" alt="Leather-plain" id="hideImage" title="Hide Raw">
                 <p>Hides <span class="cantSelectedHideSpan">x</span></p>
 
                 <div id="hide_range">
@@ -63,7 +63,7 @@
                     <!-- Hides -->
                     <div class="item">
                         <p>Hide</p>
-                        <img style="width: 60px; height: 60px;" src="./assets/img/Hide-raw.png" alt="">
+                        <img style="width: 60px; height: 60px;" src="./assets/img/Hide-raw.png" alt="" title="Hide Raw">
                         <span class="cantSelectedHideSpan">x</span>
                     </div>
                     <!-- Log -->
@@ -75,71 +75,84 @@
                         </div>
                         <span class="cantTotalLogsSpan">x</span>
                     </div>
-                    <!-- Water -->
-                    <div class="item">
-                        <p>Water</p>
-                        <img src="./assets/img/Water-blob.png" alt="">
-                        <span class="cantTotalLiquidSpan">x</span>
-                    </div>
                     <!-- Solvent -->
                     <div class="item">
                         <p>Lime or Powdered borax</p>
                         <div>
-                            <img src="./assets/img/Lime.png" alt="">
-                            <img src="./assets/img/Powdered_borax.png" alt="">
+                            <img src="./assets/img/Lime.png" alt="" title="Lime">
+                            <img src="./assets/img/Powdered_borax.png" alt="" title="Powered Borax">
                         </div>
-                        <span class="cantSolventSpan">x</span>
+                        <div style="display: flex; justify-content: space-between; width: 50%;">
+                            <span class="cantLimeSpan">x</span>
+                            <span class="cantPoweredBoraxSpan">x</span>
+                        </div>
                     </div>
                     <!-- Solvent -->
                     <div class="item">
                         <p>Diluited Borax or Limewater</p>
                         <div>
-                            <img src="./assets/img/Limewater.png" alt="">
-                            <img src="./assets/img/Diluited_Borax.png" alt="">
+                            <img src="./assets/img/Limewater.png" alt="" title="Limewater">
+                            <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
                         </div>
-                        <span class="cantSolventResultSpan">x</span>
+                        <div style="display: flex; justify-content: space-between; width: 50%;">
+                            <p><span class="cantLimeSpan">x</span>L</p>
+                            <p><span class="cantBoraxSpan">x</span>L</p>
+                        </div>
                     </div>
                     <!-- Weak tanin -->
                     <div class="item">
                         <p>Weak tanin</p>
                         <img src="./assets/img/Weak_tannin.png" alt="">
-                        <span class="cantLiquidSpan">x</span>
+                        <p><span class="cantLiquidSpan">x</span>L</p>
                     </div>
                     <!-- Strong tanin -->
                     <div class="item">
                         <p>Strong tanin</p>
                         <img src="./assets/img/Strong_tannin.png" alt="">
-                        <span class="cantLiquidSpan">x</span>
+                        <p><span class="cantLiquidSpan">x</span>L</p>
                     </div>
                 </div>
             </div>
             <div class="process-list">
-
                 <!-- Diluited Borax or Limewater -->
                 <div class="tableContainer">
                     <h4>Diluited Borax or Limewater</h4>
                     <table>
                         <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt=""></td>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
+                            <td rowspan="2">+</td>
+                            <td><img src="./assets/img/Water-blob.png" alt=""></td>
+                            <td rowspan="2">+</td>
+                            <td><img src="./assets/img/Lime.png" alt="" title="Lime"></td>
+                            <td rowspan="2">=</td>
+                            <td><img src="./assets/img/Limewater.png" alt="" title="Limewater"></td>
+                        </tr>
+                        <tr>
+                            <td><span class="cantLimeSpan">x</span>L</td>
+                            <td><span class="cantLimeSpan">x</span></td>
+                            <td><span class="cantLimeSpan">x</span>L</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
                             <td rowspan="2">+</td>
                             <td>
                                 <img src="./assets/img/Water-blob.png" alt="">
                             </td>
                             <td rowspan="2">+</td>
-                            <td class="optional">
-                                <img src="./assets/img/Lime.png" alt="">
-                                <img src="./assets/img/Powdered_borax.png" alt="">
+                            <td>
+                                <img src="./assets/img/Powdered_borax.png" alt="" title="Powered Borax">
                             </td>
                             <td rowspan="2">=</td>
-                            <td class="optional">
-                                <img src="./assets/img/Limewater.png" alt="">
-                                <img src="./assets/img/Diluited_Borax.png" alt="">
+                            <td class="">
+                                <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
                             </td>
                         </tr>
                         <tr>
-                            <td><span id="cantWaterToSolventSpan">x</span>L</td>
-                            <td><span class="cantSolventSpan">x</span></td>
-                            <td><span class="cantSolventResultSpan">x</span>L</td>
+                            <td><span class="cantBoraxSpan">x</span>L</td>
+                            <td><span class="cantPoweredBoraxSpan">x</span></td>
+                            <td><span class="cantBoraxSpan">x</span>L</td>
                         </tr>
                     </table>
                 </div>
@@ -151,16 +164,18 @@
                         <tbody>
                             <tr>
                                 <td rowspan="2">
-                                    <img src="./assets/img/Barrel.png" alt="">
+                                    <img src="./assets/img/Barrel.png" alt="" title="Barrel">
                                 </td>
                                 <td rowspan="2"> + </td>
-                                <td class="optional">
-                                    <img src="./assets/img/Limewater.png" alt="">
-                                    <img src="./assets/img/Diluited_Borax.png" alt="">
+                                <td class="">
+                                    <img src="./assets/img/Limewater.png" alt="" title="Limewater">
+                                </td>
+                                <td>
+                                    <img src="./assets/img/Diluited_Borax.png" alt="" title="Diluited Borax">
                                 </td>
                                 <td rowspan="2"> + </td>
                                 <td>
-                                    <img src="./assets/img/Hide-raw.png" alt="">
+                                    <img src="./assets/img/Hide-raw.png" alt="" title="Hide Raw">
                                 </td>
                                 <td rowspan="2"> = </td>
                                 <td>
@@ -168,7 +183,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><span class="cantSolventResultSpan">x</span>L</td>
+                                <td><span class="cantLimeSpan">x</span>L</td>
+                                <td><span class="cantBoraxSpan">x</span>L</td>
                                 <td><span class="cantSelectedHideSpan">x</span></td>
                                 <td><span class="cantSelectedHideSpan">x</span></td>
                             </tr>
@@ -203,7 +219,7 @@
                     <h4>Weak Tanin</h4>
                     <table>
                         <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt=""></td>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
                             <td rowspan="2">+</td>
                             <td>
                                 <img src="./assets/img/Water-blob.png" alt="">
@@ -233,7 +249,7 @@
                         <tbody>
                             <tr>
                                 <td rowspan="2">
-                                    <img src="./assets/img/Barrel.png" alt="">
+                                    <img src="./assets/img/Barrel.png" alt="" title="Barrel">
                                 </td>
                                 <td rowspan="2"> + </td>
                                 <td>
@@ -263,7 +279,7 @@
                     <h4>Strong Tanin</h4>
                     <table>
                         <tr>
-                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt=""></td>
+                            <td rowspan="2"> <img src="./assets/img/Barrel.png" alt="" title="Barrel"></td>
                             <td rowspan="2">+</td>
                             <td>
                                 <img src="./assets/img/Water-blob.png" alt="">
@@ -304,7 +320,7 @@
                         <tbody>
                             <tr>
                                 <td rowspan="2">
-                                    <img src="./assets/img/Barrel.png" alt="">
+                                    <img src="./assets/img/Barrel.png" alt="" title="Barrel">
                                 </td>
                                 <td rowspan="2"> + </td>
                                 <td>

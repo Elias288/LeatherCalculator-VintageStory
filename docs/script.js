@@ -8,22 +8,22 @@ const hideTypes = [
 
 const cants = {
   small_hide: {
-    cantTanino: 2,
+    cantLiquidPerHide: 2,
     cantLeather: 1,
     maxHidePerBarrel: 25,
   },
   medium_hide: {
-    cantTanino: 4,
+    cantLiquidPerHide: 4,
     cantLeather: 2,
     maxHidePerBarrel: 12,
   },
   huge_hide: {
-    cantTanino: 6,
+    cantLiquidPerHide: 6,
     cantLeather: 3,
     maxHidePerBarrel: 8,
   },
   large_hide: {
-    cantTanino: 10,
+    cantLiquidPerHide: 10,
     cantLeather: 5,
     maxHidePerBarrel: 5,
   },
@@ -33,34 +33,31 @@ const select = document.querySelector("#selectHide"),
   calc = document.querySelector(".calc"),
   inputRangeHide = document.querySelector("#inputRangeHide"),
   inputRangeLeather = document.querySelector("#inputRangeLeather"),
-  cantSelectedHideSpan = document.querySelectorAll(".cantSelectedHideSpan"),
-  cantSelectedLeatherSpan = document.querySelectorAll(
-    ".cantSelectedLeatherSpan"
-  ),
   maxHideSpan = document.querySelector("#maxHideSpan"),
   maxLeatherSpan = document.querySelector("#maxLeatherSpan");
 
-const cantWaterToSolventSpan = document.querySelector(
-    "#cantWaterToSolventSpan"
+const cantSelectedHideSpan = document.querySelectorAll(".cantSelectedHideSpan"),
+  cantSelectedLeatherSpan = document.querySelectorAll(
+    ".cantSelectedLeatherSpan"
   ),
-  cantSolventSpan = document.querySelectorAll(".cantSolventSpan"),
-  cantSolventResultSpans = document.querySelectorAll(".cantSolventResultSpan"),
   cantLogsSpan = document.querySelectorAll(".cantLogsSpan"),
   cantLiquidSpan = document.querySelectorAll(".cantLiquidSpan"),
   cantTotalLogsSpan = document.querySelectorAll(".cantTotalLogsSpan"),
-  cantTotalLiquidSpan = document.querySelectorAll(".cantTotalLiquidSpan");
+  cantTotalLiquidSpan = document.querySelectorAll(".cantTotalLiquidSpan"),
+  cantLimeSpan = document.querySelectorAll(".cantLimeSpan"),
+  cantBoraxSpan = document.querySelectorAll(".cantBoraxSpan"),
+  cantPoweredBoraxSpan = document.querySelectorAll(".cantPoweredBoraxSpan");
 
 const minWaterPerBarrel = 10,
-  maxWaterPerBarrel = 50,
-  cantSolventPerHide = 1;
+  maxWaterPerBarrel = 50;
 
 let selectedHide = "---",
   cantSelectedHide = 1,
   cantSelectedLeather = 1,
   leatherPerHide = 1,
   maxHide = 0,
-  maxLeather = 0;
-taninPerHide = 0;
+  maxLeather = 0,
+  liquidPerHide = 0;
 
 for (var i = 0; i < hideTypes.length; i++) {
   var opcion = document.createElement("option");
@@ -134,7 +131,7 @@ function init() {
 
   // LEATHER
   leatherPerHide = val.cantLeather;
-  taninPerHide = val.cantTanino;
+  liquidPerHide = val.cantLiquidPerHide;
   maxLeather = val.maxHidePerBarrel * leatherPerHide;
   maxLeatherSpan.textContent = maxLeather;
   minLeatherSpan.textContent = leatherPerHide;
@@ -149,36 +146,38 @@ function init() {
 }
 
 function calculate() {
-  cantWaterToSolventSpan.textContent = cantSelectedHide;
-  cantSolventSpan.forEach((e) => {
-    e.textContent = cantSelectedHide;
+  cantLimeSpan.forEach((e) => {
+    e.textContent = cantSelectedHide * liquidPerHide;
   });
-  cantSolventResultSpans.forEach((element) => {
-    element.textContent = cantSelectedHide;
+  cantBoraxSpan.forEach((e) => {
+    const cantBorax = Math.ceil((cantSelectedHide * liquidPerHide) / 5) * 5;
+    e.textContent = cantBorax;
   });
-
+  cantPoweredBoraxSpan.forEach((e) => {
+    e.textContent = Math.ceil((cantSelectedHide * liquidPerHide) / 5) * 2;
+  });
   cantLiquidSpan.forEach((e) => {
-    e.textContent = Math.ceil((cantSelectedHide * taninPerHide) / 10) * 10;
+    e.textContent = Math.ceil((cantSelectedHide * liquidPerHide) / 10) * 10;
   });
   cantTotalLiquidSpan.forEach((e) => {
     const taninWater =
-      Math.ceil((cantSelectedHide * taninPerHide) / 10) * 10 * 2;
+      Math.ceil((cantSelectedHide * liquidPerHide) / 10) * 10 * 2;
     e.textContent = Number(cantSelectedHide) + taninWater;
   });
 
   cantLogsSpan.forEach((e) => {
-    e.textContent = Math.ceil((cantSelectedHide * taninPerHide) / 10);
+    e.textContent = Math.ceil((cantSelectedHide * liquidPerHide) / 10);
   });
 
   cantTotalLogsSpan.forEach((e) => {
-    e.textContent = Math.ceil((cantSelectedHide * taninPerHide) / 10) * 3;
+    e.textContent = Math.ceil((cantSelectedHide * liquidPerHide) / 10) * 3;
   });
 }
 
 function resetValues() {
   selectedHide = "---";
   leatherPerHide = 1;
-  taninPerHide = 0;
+  liquidPerHide = 0;
   maxHide = 0;
   maxLeather = 0;
   inputRangeHide.value = 1;
