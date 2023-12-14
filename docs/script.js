@@ -2,8 +2,8 @@ const hideTypes = [
   ["---", "---"],
   ["Small hide", "small_hide"],
   ["Medium hide", "medium_hide"],
-  ["Huge hide", "huge_hide"],
   ["Large hide", "large_hide"],
+  ["Huge hide", "huge_hide"],
 ];
 
 const cants = {
@@ -17,12 +17,12 @@ const cants = {
     cantLeather: 2,
     maxHidePerBarrel: 12,
   },
-  huge_hide: {
+  large_hide: {
     cantLiquidPerHide: 6,
     cantLeather: 3,
     maxHidePerBarrel: 8,
   },
-  large_hide: {
+  huge_hide: {
     cantLiquidPerHide: 10,
     cantLeather: 5,
     maxHidePerBarrel: 5,
