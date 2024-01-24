@@ -1,0 +1,64 @@
+body {
+  background-color: var(--color-gray);
+  background-image: url("./assets/VSBackground.png");
+  background-repeat: round;
+}
+
+.title {
+  height: var(--header-height);
+  padding: 20px;
+  margin-bottom: 1rem;
+  background-color: var(--color-orange);
+  box-shadow: inset 0 0 20px var(--color-brown);
+
+  h1 {
+    text-align: center;
+    text-shadow: 1px 1px var(--color-brown2), 2px 2px 1px var(--color-brown);
+    color: var(--color-green);
+  }
+}
+
+main {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+  max-width: 70rem;
+}
+
+section {
+  padding: 2rem;
+  flex: 1;
+  box-shadow: 5px 5px 20px #00000080;
+  backdrop-filter: blur(3px);
+  overflow: auto;
+}
+
+footer {
+  padding: 1rem;
+  backdrop-filter: blur(3px);
+  max-width: 70rem;
+  margin: auto;
+
+  background-color: var(--color-orange);
+  box-shadow: inset 0 0 20px var(--color-brown);
+}
+
+@media screen and (min-width: 50rem) {
+  main {
+    flex-direction: row;
+    gap: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0;
+
+    nav {
+      flex: 2;
+    }
+
+    section {
+      flex: 10;
+    }
+  }
+}

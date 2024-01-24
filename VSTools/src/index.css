@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  --header-height: 5rem;
+  --color-gray: rgb(224, 224, 224);
+  --color-white: #fff;
+  --color-brown: #563c1b;
+  --color-brown2: #3c0205;
+  --color-dark-brown: #24190b;
+  --color-green: #93a45c;
+  --color-orange: #fde1c2;
+  --color-orange2: #beab98;
+}

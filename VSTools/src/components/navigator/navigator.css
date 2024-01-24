@@ -1,0 +1,11 @@
+nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 50rem) {
+  nav {
+    flex-direction: column;
+  }
+}
