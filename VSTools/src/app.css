@@ -20,7 +20,7 @@ body {
 
 main {
   display: flex;
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   flex-direction: column;
   margin-bottom: 1rem;
   padding: 0 0.5rem;
@@ -32,7 +32,6 @@ section {
   flex: 1;
   box-shadow: 5px 5px 20px #00000080;
   backdrop-filter: blur(3px);
-  overflow: auto;
 }
 
 footer {

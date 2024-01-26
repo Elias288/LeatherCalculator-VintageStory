@@ -9,7 +9,7 @@ import "./NavigatorButtonStyles.css";
  * @returns
  */
 const NavigatorButton = ({ text, action }) => {
-  return <button onClick={action}>{text}</button>;
+  return <button className="navigatorButton" onClick={action}>{text}</button>;
 };
 
 NavigatorButton.propTypes = {
