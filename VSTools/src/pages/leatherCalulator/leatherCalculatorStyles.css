@@ -1,0 +1,124 @@
+section.leatherCalculator {
+  background-color: var(--color-white);
+}
+
+.toggleLeather {
+  display: flex;
+  flex-direction: column;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 68px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 68px;
+
+    &:checked + .slider:before {
+      background-image: url("./assets/Leather.png");
+      background-size: 65px;
+      background-position-x: center;
+      background-position-y: center;
+      background-repeat: no-repeat;
+
+      -webkit-transform: translateX(52px);
+      -ms-transform: translateX(52px);
+      transform: translateX(52px);
+    }
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: #ccc; */
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 52px;
+    width: 52px;
+    left: 4px;
+    bottom: 4px;
+
+    background: url("./assets/Hide-raw.png");
+    background-size: 50px;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+.buttonsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+
+  > button {
+    /* background-color: green; */
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#smallHideRaw {
+  width: 50px;
+  height: 50px;
+}
+
+#mediumHideRaw {
+  width: 75px;
+  height: 75px;
+}
+
+#largeHideRaw {
+  width: 100px;
+  height: 100px;
+}
+
+#hugeHideRaw {
+  width: 125px;
+  height: 125px;
+}
+
+.shoppingList {
+  img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* .item {
+    border-bottom: 1px solid black;
+  } */
+}
+
+@media screen and (min-width: 50rem) {
+  .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    max-width: none;
+
+    > button {
+      flex: 1;
+    }
+  }
+}
