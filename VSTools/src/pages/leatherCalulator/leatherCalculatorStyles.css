@@ -2,6 +2,11 @@ section.leatherCalculator {
   background-color: var(--color-white);
 }
 
+img {
+  width: 50px;
+  height: 50px;
+}
+
 .toggleLeather {
   display: flex;
   flex-direction: column;
@@ -70,13 +75,20 @@ section.leatherCalculator {
   margin: auto;
 
   > button {
-    /* background-color: green; */
     border: none;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.Selected {
+      background-color: #797979;
+    }
   }
 }
 
@@ -101,14 +113,23 @@ section.leatherCalculator {
 }
 
 .shoppingList {
-  img {
-    width: 50px;
-    height: 50px;
-  }
-
+  display: flex;
+  flex-direction: row;
   /* .item {
     border-bottom: 1px solid black;
   } */
+}
+
+.manufacturingPath {
+  > div {
+    margin-bottom: 1rem;
+  }
+
+  & > div,
+  .solvent > div {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 50rem) {
