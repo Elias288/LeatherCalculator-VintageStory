@@ -10,13 +10,17 @@ import logAcacia from "./assets/Log-acacia.png";
 import logOak from "./assets/Log-oak.png";
 import lime from "./assets/lime.png";
 import poweredBorax from "./assets/Powdered_borax.png";
-import limewater from "./assets/Limewater.png";
+import limewater from "./assets/Limewater-blob.png";
 import diluitedBorax from "./assets/Diluited_Borax.png";
 import weakTannin from "./assets/Weak_tannin.png";
 import strongTannin from "./assets/Strong_tannin.png";
 import barrel from "./assets/Barrel.png";
 import water from "./assets/Water-blob.png";
 import knife from "./assets/Knife-flint.png";
+import CraftingGrid from "../../components/CraftingGrid/CraftingGrid";
+import Item from "../../components/Item/Item";
+import Inventory from "../../components/Inventory/Inventory";
+import Barrel from "../../components/barrel/Barrel";
 
 /**
  * @typedef {object} sizeValues
@@ -30,25 +34,25 @@ const HIDE_SIZES = {
   SMALL: {
     name: "small",
     amountLiquidPerHide: 2,
-    cantLeather: 1,
+    amountLeather: 1,
     maxHidePerBarrel: 25,
   },
   MEDIUM: {
     name: "medium",
     amountLiquidPerHide: 4,
-    cantLeather: 2,
+    amountLeather: 2,
     maxHidePerBarrel: 12,
   },
   LARGE: {
     name: "large",
     amountLiquidPerHide: 6,
-    cantLeather: 3,
+    amountLeather: 3,
     maxHidePerBarrel: 8,
   },
   HUGE: {
     name: "huge",
     amountLiquidPerHide: 10,
-    cantLeather: 5,
+    amountLeather: 5,
     maxHidePerBarrel: 5,
   },
 };
@@ -76,6 +80,7 @@ const LeatherCalculator = () => {
   );
   const [shoppingList, setShoppingList] = useState(EMPTY_SHOPPING_LIST);
   const [hideRange, setHideRange] = useState(/** @type {number} */ 1);
+  const [leatherPerHideAmount, setLeatherPerHideAmount] = useState(1);
 
   /**
    * Set size hide values
@@ -86,24 +91,29 @@ const LeatherCalculator = () => {
     setSelectedSizeValue(sizeValues);
     // reinicia el range
     setHideRange(1);
-    // reinicia la lista del shopping
 
-    calculate(1, sizeValues.amountLiquidPerHide);
+    calculate(1, sizeValues.amountLiquidPerHide, sizeValues.amountLeather);
   };
 
   const onRangeChange = (e) => {
-    const value = e.target.value;
+    /** @type {number} */
+    const value = Number(e.target.value);
     setHideRange(value);
 
-    calculate(value, selectedSizeValues.amountLiquidPerHide);
+    calculate(
+      value,
+      selectedSizeValues.amountLiquidPerHide,
+      selectedSizeValues.amountLeather
+    );
   };
 
   /**
    * Calcula las cantidades de los diferentes items
    * @param {number} amountOfHides
    * @param {number} amountOfLiquidPerHide
+   * @param {number} amountLeather
    */
-  const calculate = (amountOfHides, amountOfLiquidPerHide) => {
+  const calculate = (amountOfHides, amountOfLiquidPerHide, amountLeather) => {
     setShoppingList({
       ...shoppingList,
       amountOfHides,
@@ -117,6 +127,9 @@ const LeatherCalculator = () => {
       amountOfTanin:
         Math.ceil((amountOfHides * amountOfLiquidPerHide) / 10) * 10,
     });
+
+    // cantidad de cuero por el tamaño
+    setLeatherPerHideAmount(amountLeather * amountOfHides);
   };
 
   return (
@@ -128,7 +141,7 @@ const LeatherCalculator = () => {
           <h3>Calculate by amount of hide/leather</h3>
 
           <label className="switch">
-            <input type="checkbox" /* onChange={() => setByHide(!byHide)} */ />
+            <input type="checkbox" onChange={() => setByHide(true)} />
             <p className="slider"></p>
           </label>
         </div>
@@ -145,13 +158,15 @@ const LeatherCalculator = () => {
                   : "notSelected"
               }
             >
-              <img
-                src={hideRaw}
-                alt="Small hide raw"
-                id="smallHideRaw"
-                title="Small hide raw"
-              />
-              <label>Small</label>
+              <div>
+                <img
+                  src={hideRaw}
+                  alt="Small hide raw"
+                  id="smallHideRaw"
+                  title="Small hide raw"
+                />
+                <label>Small</label>
+              </div>
             </button>
 
             <button
@@ -162,13 +177,15 @@ const LeatherCalculator = () => {
                   : "notSelected"
               }
             >
-              <img
-                src={hideRaw}
-                alt="Medium hide raw"
-                id="mediumHideRaw"
-                title="Medium hide raw"
-              />
-              <label>Medium</label>
+              <div>
+                <img
+                  src={hideRaw}
+                  alt="Medium hide raw"
+                  id="mediumHideRaw"
+                  title="Medium hide raw"
+                />
+                <label>Medium</label>
+              </div>
             </button>
 
             <button
@@ -179,13 +196,15 @@ const LeatherCalculator = () => {
                   : "notSelected"
               }
             >
-              <img
-                src={hideRaw}
-                alt="Large hide raw"
-                id="largeHideRaw"
-                title="Large hide raw"
-              />
-              <label>Large</label>
+              <div>
+                <img
+                  src={hideRaw}
+                  alt="Large hide raw"
+                  id="largeHideRaw"
+                  title="Large hide raw"
+                />
+                <label>Large</label>
+              </div>
             </button>
 
             <button
@@ -196,13 +215,15 @@ const LeatherCalculator = () => {
                   : "notSelected"
               }
             >
-              <img
-                src={hideRaw}
-                alt="Huge hide raw"
-                id="hugeHideRaw"
-                title="Huge hide raw"
-              />
-              <label>Huge</label>
+              <div>
+                <img
+                  src={hideRaw}
+                  alt="Huge hide raw"
+                  id="hugeHideRaw"
+                  title="Huge hide raw"
+                />
+                <label>Huge</label>
+              </div>
             </button>
           </div>
         )}
@@ -211,96 +232,100 @@ const LeatherCalculator = () => {
           <>
             <div className="hideRange">
               <p>
-                Amount of{" "}
-                {byHide ? selectedSizeValues.name + " " + "hide" : "leather"}{" "}
-                {hideRange}
+                <strong>
+                  Amount of{" "}
+                  {byHide ? selectedSizeValues.name + " " + "hide" : "leather"}{" "}
+                  {hideRange}
+                </strong>
               </p>
-              <p>1</p>
 
-              <input
-                type="range"
-                min={1}
-                max={selectedSizeValues.maxHidePerBarrel}
-                onChange={onRangeChange}
-                value={hideRange}
-                ref={range}
-              />
+              <div>
+                <p>1</p>
 
-              <p>{selectedSizeValues.maxHidePerBarrel}</p>
+                <input
+                  type="range"
+                  min={1}
+                  max={selectedSizeValues.maxHidePerBarrel}
+                  onChange={onRangeChange}
+                  value={hideRange}
+                  ref={range}
+                />
+
+                <p>{selectedSizeValues.maxHidePerBarrel}</p>
+              </div>
+            </div>
+
+            <div className="leatherResultContainer">
+              <h3>Leather Result</h3>
+              <div className="leatherResult">
+                <Item
+                  img={leather}
+                  imgTitle="Leather"
+                  amount={leatherPerHideAmount}
+                  itemSize={100}
+                  size={100}
+                />
+              </div>
             </div>
 
             <div className="shoppingList">
               <h3>Shop List</h3>
-
-              {/* HIDE */}
-              <div className="item">
-                <p>Hide</p>
-                <img src={hideRaw} alt="Hide" title="Hide" />
-                <p>{shoppingList.amountOfHides}</p>
-              </div>
-
-              {/* LOGS */}
-              <div className="item">
-                <p>Oak or Acacia logs</p>
-                <div>
-                  <img src={logOak} alt="log oak" title="log oak" />
-                  <img src={logAcacia} alt="log acacia" title="log acacia" />
-                  <p>{shoppingList.amountOfLogs * 3}</p>
-                </div>
-              </div>
-
-              {/* LIME AND POWERED BORAX */}
-              <div className="item">
-                <p>Lime or Powered Borax</p>
-                <div>
-                  <img src={lime} alt="lime" title="lime" />
-                  <img
-                    src={poweredBorax}
-                    alt="powered borax"
-                    title="powered borax"
+              <Inventory
+                one={
+                  <Item
+                    img={hideRaw}
+                    amount={+shoppingList.amountOfHides}
+                    imgTitle="Hide"
                   />
-                </div>
-                <div>
-                  <p>{shoppingList.amountOfLime}</p>
-                  <p>{shoppingList.amountOfPoweredBorax}</p>
-                </div>
-              </div>
-
-              {/* LIMEWATER AND DILUITED BORAX */}
-              <div className="item">
-                <p>Limewater or Diluited Borax</p>
-                <div>
-                  <img src={limewater} alt="limewater" title="limewater" />
-                  <img
-                    src={diluitedBorax}
-                    alt="diluited borax "
-                    title="diluited borax"
+                }
+                two={
+                  <Item
+                    img={logOak}
+                    amount={shoppingList.amountOfLogs * 3}
+                    imgTitle="Oak log or Acacia log"
+                    img2={logAcacia}
+                    amount2={shoppingList.amountOfLogs * 3}
+                    imgTitle2="Oak log or Acacia log"
+                    isDual={true}
                   />
-                </div>
-                <div>
-                  <p>{shoppingList.amountOfLimewater}l</p>
-                  <p>{shoppingList.amountOfDiluitedBorax}l</p>
-                </div>
-              </div>
-
-              {/* WEAK TANIN */}
-              <div className="item">
-                <p>Weak tanin</p>
-                <img src={weakTannin} alt="weak tanin" title="weak tanin" />
-                <p>{shoppingList.amountOfTanin * 2}l</p>
-              </div>
-
-              {/* STRONG TANIN */}
-              <div className="item">
-                <p>Strong tanin</p>
-                <img
-                  src={strongTannin}
-                  alt="strong tanin"
-                  title="strong tanin"
-                />
-
-                <p>{shoppingList.amountOfTanin}l</p>
-              </div>
+                }
+                tree={
+                  <Item
+                    img={lime}
+                    amount={shoppingList.amountOfLime}
+                    imgTitle="Lime or powered Borax"
+                    img2={poweredBorax}
+                    amount2={shoppingList.amountOfLime}
+                    imgTitle2="Lime or powered Borax"
+                    isDual={true}
+                  />
+                }
+                four={
+                  <Item
+                    isDual={true}
+                    img={limewater}
+                    amount={shoppingList.amountOfLimewater}
+                    imgTitle="Limewater or diluited borax"
+                    img2={diluitedBorax}
+                    amount2={shoppingList.amountOfLimewater}
+                    imgTitle2="Limewater or diluited borax"
+                  />
+                }
+                five={
+                  <Item
+                    img={weakTannin}
+                    amount={shoppingList.amountOfTanin * 2}
+                    imgTitle="Weak tanin"
+                  />
+                }
+                six={
+                  <Item
+                    img={strongTannin}
+                    amount={shoppingList.amountOfTanin}
+                    imgTitle="Strong tanin"
+                  />
+                }
+              />
             </div>
 
             <div className="manufacturingPath">
@@ -337,6 +362,8 @@ const LeatherCalculator = () => {
                   />
                   <p>{shoppingList.amountOfPoweredBorax}</p>
                 </div>
+
+                <Barrel />
               </div>
 
               <div className="soakedHide">
@@ -370,22 +397,25 @@ const LeatherCalculator = () => {
                 <p>
                   <strong>ScrapedHide</strong>
                 </p>
-                <div>
-                  <img src={hideSoaked} alt="hideSoaked" title="hide Soaked" />
-                  <p>{hideRange}</p>
-                </div>
-                <div>
-                  <img src={knife} alt="knife" title="knife" />
-                  <p>1</p>
-                </div>
-                <div>
-                  <img
-                    src={hideScraped}
-                    alt="hideScraped"
-                    title="hide Scraped"
-                  />
-                  <p>{hideRange}</p>
-                </div>
+                <CraftingGrid
+                  middleLeft={
+                    <Item img={knife} imgTitle="Knife" itemSize={70} />
+                  }
+                  middleMiddle={
+                    <Item
+                      img={hideSoaked}
+                      imgTitle="Hide soaked"
+                      amount={hideRange}
+                    />
+                  }
+                  result={
+                    <Item
+                      img={hideScraped}
+                      imgTitle="Hide soaked"
+                      amount={hideRange}
+                    />
+                  }
+                />
               </div>
 
               <div className="weakTanin">
@@ -495,7 +525,7 @@ const LeatherCalculator = () => {
 
                 <div>
                   <img src={leather} alt="leather" title="leather" />
-                  <p>{hideRange}</p>
+                  <p>{leatherPerHideAmount}</p>
                 </div>
               </div>
             </div>

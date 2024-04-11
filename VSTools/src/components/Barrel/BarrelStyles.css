@@ -1,0 +1,4 @@
+.barrelContainer {
+  background-color: var(--color-dark-brown);
+  border: 3px solid var(--color-very-dark-brown);
+}

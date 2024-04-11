@@ -1,6 +1,6 @@
-section.leatherCalculator {
-  background-color: var(--color-white);
-}
+/* section.leatherCalculator { */
+/* background-color: var(--color-white); */
+/* } */
 
 img {
   width: 50px;
@@ -73,21 +73,35 @@ img {
   gap: 1rem;
   max-width: 500px;
   margin: auto;
+  margin-bottom: 2rem;
 
   > button {
     border: none;
-
+    background-color: transparent;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    &:hover {
-      cursor: pointer;
+    > div {
+      width: 150px;
+      height: 150px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--color-orange);
+      box-shadow: inset 0 0 20px var(--color-brown);
+      border: 2px solid var(--color-very-dark-brown);
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
-    &.Selected {
-      background-color: #797979;
+    &.Selected > div {
+      background-color: var(--color-dark-orange);
     }
   }
 }
@@ -112,23 +126,47 @@ img {
   height: 125px;
 }
 
-.shoppingList {
+.hideRange {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--color-orange);
+  box-shadow: inset 0 0 20px var(--color-brown);
+  border: 2px solid var(--color-very-dark-brown);
+
+  p {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: large;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+
+    > input {
+      flex: 1;
+    }
+  }
+}
+
+.leatherResult {
+  background-color: var(--color-dark-brown);
+  border: 3px solid var(--color-very-dark-brown);
+  overflow: auto;
+
   display: flex;
-  flex-direction: row;
-  /* .item {
-    border-bottom: 1px solid black;
-  } */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .manufacturingPath {
   > div {
     margin-bottom: 1rem;
-  }
 
-  & > div,
-  .solvent > div {
-    display: flex;
-    flex-direction: row;
+    border: 2px solid black;
   }
 }
 

@@ -1,0 +1,25 @@
+.CraftingGridContainer {
+  background: url("../../assets/VSBackground.png");
+  border: 3px solid var(--color-very-dark-brown);
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-items: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  .grid {
+    /* width: 70px;
+    height: 70px;
+    background-color: var(--color-orange);
+    box-shadow: inset 0 0 20px var(--color-brown);
+    border: 3px solid var(--color-very-dark-brown);
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    &.product {
+      grid-area: 4/2;
+    }
+  }
+}

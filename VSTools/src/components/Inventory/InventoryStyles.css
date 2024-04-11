@@ -1,0 +1,16 @@
+.InventoryContainer {
+  background-color: var(--color-dark-brown);
+  border: 3px solid var(--color-very-dark-brown);
+  overflow: auto;
+
+  .gridContainer {
+    max-width: 450px;
+    margin: auto;
+    padding: 1rem 0.3rem;
+    padding-right: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 0.3rem;
+  }
+}
